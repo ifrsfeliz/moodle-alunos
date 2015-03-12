@@ -1,0 +1,47 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: moodle_user_dev
+  pool: 5
+  username: root
+  password: 'suasenha'
+  host: localhost
+  port: 3306
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: moodle_user_test
+  pool: 5
+  username: root
+  password: 'suasenha'
+  host: localhost
+  port: 3306
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: moodle_user_dev
+  username: root
+  password: 'suasenha'
+  pool: 5
+  host: localhost
+  port: 3306
+
+moodle:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: moodle
+  pool: 5
+  username: usuario_do_moodle
+  password: 'senha_do_moodle'
+  host: 192.168.103.251
+  port: 3306
+
