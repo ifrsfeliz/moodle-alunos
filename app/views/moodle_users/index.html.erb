@@ -1,0 +1,45 @@
+<div id="moodle-users">
+  <h1 class="title">Moodle - Alunos</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Filtrar alunos por cursos, anos e disciplinas</h4>
+      <select id="categories" name="categories"  onchange="if (this.value) window.location.href=this.value">
+        <option value="/moodle_users/index" <%= (@path) ? '' : 'selected' %>>Todos os Alunos</option>
+        <% @categories.each do |c| %>
+          <option value="/moodle_users/index?path=<%= c['path'] %>" <%= (@path == c['path']) ? 'selected' : '' %>>
+          <% c['path'].scan('/').count.times do %>
+            &nbsp;
+            &nbsp;
+          <% end %>
+          <%= c['name'] %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+    <div class="col-md-8">
+      <h4 class="total">Total de Alunos: <%= @students.count %></h4>
+      <textarea class="emails" rows="5" onclick="this.focus();this.select()"><%= @students.map{|e| e['email']}.join(', ') %></textarea>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Usuário</th>
+      <th>Nome Completo</th>
+      <th>E-mail</th>
+      <th>Cidade</th>
+      <th>País</th>
+    </tr>
+
+    <% @students.each do |s| %>
+      <tr>
+        <td><%= s['username'] %></td>
+        <td><%= s['firstname'] + ' ' + s['lastname'] %></td>
+        <td><%= s['email'] %></td>
+        <td><%= s['city'] %></td>
+        <td><%= s['country'] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
