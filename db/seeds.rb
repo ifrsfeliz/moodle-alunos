@@ -11,3 +11,15 @@
   puts "Role #{role} was created."
 end
 
+
+u = User.new(:email => "sti@feliz.ifrs.edu.br", :password => '12345678', :password_confirmation => '12345678')
+u.save
+
+user = User.find_by_email('sti@feliz.ifrs.edu.br')
+
+if user
+  user.roles << Role.find_by_name('admin')
+  user.admin_authorization = true
+  user.save
+end
+
