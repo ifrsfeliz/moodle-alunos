@@ -17,9 +17,11 @@ u.save
 
 user = User.find_by_email('sti@feliz.ifrs.edu.br')
 
+puts user
+
 if user
-  user.roles << Role.find_by_name('admin')
   user.admin_authorization = true
   user.save
+  user.roles << Role.find_by_name('admin')
 end
 
