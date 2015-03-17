@@ -86,15 +86,15 @@ Editar o arquivo /etc/nginx/nginx.conf
 
 Nas linhas onde estiver, descomentar as linhas tirando o '#'
 
-`
-passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
-passenger_ruby /usr/bin/ruby;
-`
+`passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+passenger_ruby /usr/bin/ruby;`
 
 Editar o arquivo /etc/nginx/sites-enabled/default
+
 `sudo nano /etc/nginx/sites-enabled/default`
 
 Comentar o bloco server existente e adicionar esse abaixo, trocando seuusuario pelo seu Usuário e colocando o IP do seu servidor no server_name:
+
 `
 server {
   listen 80;
