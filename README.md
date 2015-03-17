@@ -20,9 +20,11 @@ Instalar alguns pacotes de dependências
 
 `sudo apt-get install build-essential libmysqlclient-dev libssl-dev libyaml-dev libreadline-dev openssl curl git-core zlib1g-dev bison libxml2-dev libxslt1-dev libcurl4-openssl-dev nodejs libsqlite3-dev sqlite3`
 
-Verificar a versão stable do ruby: https://www.ruby-lang.org/en/downloads/
+Verificar a versão stable do ruby: https://www.ruby-lang.org/en/downloads/ e fazer o download via wget
 
-`wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz` Alterar esse link sempre que tiver nova versão (a versão 2.2.1 tava falhando no comando make, caso falhar pegar a versão stable anterior)
+Alterar esse link sempre que tiver nova versão (a versão 2.2.1 tava falhando no comando make, caso falhar pegar a versão stable anterior)
+
+`wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz`
 
 `tar -xzf ruby-2.1.5.tar.gz`
 
@@ -35,9 +37,11 @@ Verificar a versão stable do ruby: https://www.ruby-lang.org/en/downloads/
 `sudo make install`
 
 Verificar a versão do ruby
+
 `ruby -v`
 
 Se tiver tudo ok, remover os arquivos de instalação do ruby
+
 `cd ..`
 `rm -rf ~/ruby-2.1.5`
 `rm ruby-2.1.5.tar.gz`
@@ -148,7 +152,6 @@ moodle:
   password: 'senhadousuariodobancodomoodle'
   host: 192.168.103.xxx
   port: 3306
-
 `
 
 Criar o arquivo secrets.yml colocando uma chave secreta no ambiente de produção, como exemplo, (ALTERAR, não deixar a mesma!)
