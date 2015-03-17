@@ -332,6 +332,6 @@ Caso seja necessário reiniciar o nginx, é possível da pasta do projeto execut
 cap production deploy:restart
 ```
 
-Acho que é isso! (-_-)
+É isso! (-_-)
 
 Para auxílio sti@feliz.ifrs.edu.br
