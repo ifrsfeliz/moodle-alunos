@@ -43,14 +43,16 @@ Verificar a versão do ruby
 Se tiver tudo ok, remover os arquivos de instalação do ruby
 
 `cd ..`
+
 `rm -rf ~/ruby-2.1.5`
+
 `rm ruby-2.1.5.tar.gz`
 
-
 Adicionar as chaves para download da última versão do NGINX
+
 `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7`
 
-edita o arquivo de source do apt-get
+Editar o arquivo de source do apt-get
 
 `sudo nano /etc/apt/sources.list`
 
@@ -58,23 +60,32 @@ No final do arquivo colocar
 `deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main`
 
 Atualizar os pacotes e instalar o NGINX e Passenger
+
 `sudo apt-get update`
+
 `sudo apt-get install nginx-extras passenger`
 
 Com isso algumas vezes as dependencias serão instaladas e sobreescreverá nossa versão do Ruby, assim precisamos voltar a versão atualizando o bin do ruby.
 
+Verificar novamente a versão do ruby
+
+`ruby -v`
+
+se alterou para alguma versão anterior fazer os passos a seguir:
+
 `sudo rm /usr/bin/ruby`
+
 `sudo ln -s /usr/local/bin/ruby /usr/bin/ruby`
 
-
 Feito isso precisamos criar a pasta onde ficará nossa aplicação:
-`mkdir ~/app`
 
+`mkdir ~/app`
 
 Editar o arquivo /etc/nginx/nginx.conf
 `sudo nano /etc/nginx/nginx.conf`
 
 Nas linhas onde estiver, descomentar as linhas tirando o '#'
+
 `
 passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
 passenger_ruby /usr/bin/ruby;
