@@ -13,8 +13,13 @@ Já que, os e-mails do moodle são verificados e são os próprios alunos que ma
 
 Antes de qualquer coisa atualizar o sistema para evitar problemas futuros:
 
-`sudo apt-get update`
-`sudo apt-get upgrade`
+```console
+sudo apt-get update
+```
+
+```console
+sudo apt-get upgrade
+```
 
 Instalar alguns pacotes de dependências
 
