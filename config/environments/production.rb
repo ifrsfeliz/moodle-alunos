@@ -79,8 +79,8 @@ Rails.application.configure do
 
   # Email SMTP Configuration
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.asset_host = "http://scm.feliz.ifrs.edu.br"
-  config.action_mailer.default_url_options = { :host => "http://scm.feliz.ifrs.edu.br" }
+  config.action_mailer.asset_host = "http://200.17.85.231"
+  config.action_mailer.default_url_options = { :host => "http://200.17.85.231" }
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
